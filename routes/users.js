@@ -1,8 +1,13 @@
-const express = require('express');
-const router = express.Router();
+// const express = require('express');
+// const router = express.Router();
+// const userCtrl = require('../controllers/users');
 
-router.get('/', function(req, res, next){
-    res.send('respond with a source')
-});
+// router.get('/cars', userCtrl.index);
+// router.post('/cars', isLoggedIn, userCtrl.addCar);
 
-module.exports = router;
+// function isLoggedIn(req, res, next){
+//     if(req.isAuthenticated()) return next();
+//     res.redirect('/auth/google');
+// }
+
+// module.exports = router;

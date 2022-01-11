@@ -13,7 +13,8 @@
 <body>
     <img class='img' src='/images/durk.jpeg'>
     <nav>
-        <a class='allLinks' href='/cars' <%- title === 'Home' ? 'class="active"' : '' %>>Home</a>
+        <a class='allLinks' href='/cars'>Car Reviews</a>
+        <a class='allLinks' href='/'>Home</a>
             <% if (user) { %>
                 <a class='allLinks' href='/logout'>Log Out</a>
                 <span>Hello <%= user.name %> </span>

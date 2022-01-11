@@ -13,13 +13,14 @@
 <body>
     <img class='img' src='/images/durk.jpeg'>
     <nav>
-        <a class='allLinks' href='/cars/new' <%- title === 'Home' ? 'class="active"' : '' %>>Create Car</a>
-            <% if (user) { %>
-                <a class='allLinks' href='/logout'>Log Out</a>
-                <span>Hello <%= user.name %> </span>
-                <% } else { %>
-                    <a class='allLinks' href='/auth/google'>Log In</a>
-                    <% } %>
+        <a class='allLinks' href='/cars/new'>Create Car</a>
+        <a class='allLinks' href='/'>Home</a>
+        <% if (user) { %>
+            <a class='allLinks' href='/logout'>Log Out</a>
+            <span>Hello <%= user.name %> </span>
+            <% } else { %>
+                <a class='allLinks' href='/auth/google'>Log In</a>
+                <% } %>
                 </nav>
                 <h1 class='hdr'>Car Reviews</h1>
                 <p class='title-description'>Wanna see a review for a car? Or even make one? Then you've come to the right place</p>
@@ -42,7 +43,7 @@
                         <td><%= c.year %></td>
                         <td><%= c.posted.toLocaleDateString() %></td>
                         <td><%= c.author %> </td>
-                        <td><a class='allButtons' href="/cars/show.ejs<% c._id %>">DETAILS</a></td>
+                        <td><a class='allButtons' href="cars/show/<% c._id %>">DETAILS</a></td>
                     </tr>
                     <% }) %> 
             </tbody>

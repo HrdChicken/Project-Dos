@@ -1,7 +1,7 @@
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 //Require your User Model here!
-
+const User = require('../models/user');
 // configuring Passport!
 passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
@@ -12,7 +12,22 @@ passport.use(new GoogleStrategy({
     // a user has logged in via OAuth!
     // refer to the lesson plan from earlier today in order to set this up
     console.log(profile, "<----- Profile");
-    
+    User.findOne({googleId: profile.id}, function(err, userDocument){
+      if(err) return sb(err);
+      if(userDocument){
+        return cb(null, userDocument);
+      } else {
+        const newUser = new User({
+          name: profile.displayName,
+          email: profile.emails[0].value,
+          googleId: profile.id,
+        });
+        newUser.save(function(err){
+          if(err) return cb(err);
+          return cb(null, newUser)
+        })
+      }
+    })
   }
 ));
 
@@ -25,7 +40,9 @@ passport.deserializeUser(function(id, done) {
   // Find your User, using your model, and then call done(err, whateverYourUserIsCalled)
   // When you call this done function passport assigns the user document to req.user, which will 
   // be availible in every Single controller function, so you always know the logged in user
-
+  User.findById(id, function(err, userDocument){
+    done(err, userDocument);
+  })
 });
 
 

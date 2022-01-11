@@ -3,7 +3,7 @@ const passport = require('passport');
 
 // The root route renders our only view
 router.get('/', function(req, res) {
-  res.redirect('/cars');
+  res.render('index');
   // Where do you want to go for the root route
   // in the student demo this was res.redirect('/students'), what do you want?
   // This could be a landing page, or just redirect to your main resource page which you'll have an a tag that makes 
@@ -21,14 +21,14 @@ router.get('/oauth2callback', passport.authenticate(
   'google',
   {
     successRedirect : '/cars', // where do you want the client to go after you login 
-    failureRedirect : '/cars' // where do you want the client to go if login fails
+    failureRedirect : 'index' // where do you want the client to go if login fails
   }
 ));
 
 // OAuth logout route
 router.get('/logout', function(req, res){
   req.logout();
-  res.redirect('/cars');
+  res.redirect('/');
 });
 
 module.exports = router;
