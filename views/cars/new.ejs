@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <title>Home Page</title>
+</head>
+<body>
+    <img class='img' src='/images/durk.jpeg'>
+    <nav>
+        <a class='allLinks' href='/cars' <%- title === 'Home' ? 'class="active"' : '' %>>Home</a>
+            <% if (user) { %>
+                <a class='allLinks' href='/logout'>Log Out</a>
+                <span>Hello <%= user.name %> </span>
+                <% } else { %>
+                    <a class='allLinks' href='/auth/google'>Log In</a>
+                    <% } %>
+                </nav>
+                <h1 class='title'>Enter New Car</h1>
+                <p class='title-description'>Make sure to fill out all the fields.</p>
+                <div class='newpage'>
+                    <form class='content' action='/cars' method="post">
+                        <label class='content'>Make</label>
+                        <input class='inputBox' type='text' name='make'>
+                        <label class='content'>Model</label>
+                        <input class='inputBox' type='text' name='model'>
+                        <label class='content'>Year</label>
+                        <input class='inputBox' type='text' name='year'>
+                        <label class='content'>Description</label>
+                        <input class='inputBox' type='text' name='description'>
+                        <input class='allTabs' type='submit' value='Submit'/>
+                    </form>
+                </div>
+</body>
+</html>

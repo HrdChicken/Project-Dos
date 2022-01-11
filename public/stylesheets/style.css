@@ -1,20 +1,81 @@
-.brand-logo {
-  margin-left: 15px;
+body{
+  font-family: 'Bebas Neue', cursive;
+  background-color: rgb(33, 33, 33);
 }
 
-.card .card-content .card-title {
-  margin-bottom: 10px;
+nav{
+  display: flex;
+  justify-content: flex-end;
+  color: white;
 }
 
-#search-row form {
-  padding-top: 20px;
+.img{
+  padding: 2px;
+  margin: 2px;
 }
 
-.student-name {
-  position: relative;
-  top: -5px;
+.title{
+  font-family: 'Bebas Neue', cursive;
+  font-size: 35px;
+  text-align: center;
+  color: rgb(255, 255, 255);
 }
 
-.collection-item form {
-  margin-top: -5px;
+.title-description{
+  font-family: 'Bebas Neue', cursive;
+  font-size: 20px;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+
+
+.carTable{
+  text-align: center;
+  color: rgb(255, 255, 255);
+  display: grid;
+  grid-template-areas:
+    "hdr hdr hdr hdr"
+    "key key key key"
+    "content content content content";
+  grid-template-rows: 1fr 1fr 100%;
+  grid-template-columns: 2fr 1fr 1fr 6fr;
+  background-color: rgb(92, 92, 92);
+}
+
+.hdr{
+  grid-area: hdr;
+  text-align: center;
+  font-size: 30px;
+  color: rgb(255, 255, 255);
+}
+
+.key{
+  grid-area: key;
+  font-size: 30px;
+  color: rgb(255, 255, 255);
+}
+
+.content{
+  grid-area: content;
+  text-align: center;
+  font-size: 30px;
+  color: rgb(255, 255, 255);
+}
+
+.allLinks{
+  font-size: 25px;
+  padding: 2px;
+  margin: 2px;
+ }
+.allButtons{
+  font-family: 'Bebas Neue', cursive;
+  font-size: 30px;
+  color: rgb(255, 255, 255);
+}
+
+.inputBox{
+  border: 2px rgb(23, 23, 23) solid;
+  border-radius: 5px;
+  padding-top: 8px;
+  
 }

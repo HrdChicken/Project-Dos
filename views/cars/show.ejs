@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <title>Details Page</title>
+</head>
+<body>
+    <img class='img' src='/images/durk.jpeg'>
+    <nav>
+        <a class='allLinks' href='/cars' <%- title === 'Home' ? 'class="active"' : '' %>>Home</a>
+        
+            <% if (user) { %>
+                <a class='allLinks' href='/logout'>Log Out</a>
+                <span>Hello <%= user.name %> </span>
+                <% } else { %>
+                    <a class='allLinks' href='/auth/google'>Log In</a>
+                    <% } %>
+                </nav>
+                <section class='showpage'>
+                    <h1>Car Details</h1>
+                    <ul>
+                        <li>Make: <%= car.make %> </li>
+                        <li>Model: <%= car.model %> </li>
+                        <li>Year: <%= car.year %> </li>
+                        <li>Description: <%= car.description %> </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <a class='allButtons' href='/cars/<%= car.id %>/edit'>Edit</a>
+                </section>
+
+                <section>
+                    <form actions='/cars/<%= car.id %>?_method=DELETE' method='post'>
+                        <button type='submit'> DELETE</button>
+                    </form>
+                </section>
+</body>
+</html>
