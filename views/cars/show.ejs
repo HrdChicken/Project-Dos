@@ -13,36 +13,33 @@
 <body>
     <img class='img' src='/images/durk.jpeg'>
     <nav>
-        <a class='allLinks' href='/cars/new'>Create Car</a>
+        <a class='allLinks' href='/cars'>Car Reviews</a>
+        <a class='allLinks' href='/new'>Create Car</a>
         <a class='allLinks' href='/'>Home</a>
-        <% if (user) { %>
-            <a class='allLinks' href='/logout'>Log Out</a>
-            <span>Hello <%= user.name %> </span>
-            <% } else { %>
-                <a class='allLinks' href='/auth/google'>Log In</a>
-                <% } %>
+            <% if (user) { %>
+                <a class='allLinks' href='/logout'>Log Out</a>
+                <span>Hello <%= user.name %> </span>
+                <% } else { %>
+                    <a class='allLinks' href='/auth/google'>Log In</a>
+                    <% } %>
                 </nav>
+                <h1 class='title'>Detail Page</h1>
+                <p class='title-description'>Nice Read Aint It?</p>
                 <section>
-                <table>
-                    <tr>
-                        <th class='content'>Make:</th>
-                        <th class='content'>Model:</th>
-                        <th class='content'>Year:</th>
-                        <th class='content'>Posted:</th>
-                        <th class='content'>Author:</th>
-                        <th class='content'>Description:</th>
-                    </tr>
-                </table>
-                <table>
-                    <tr>
-                        <td class='content'><%= car.make %></td>
-                        <td class='content'><%= car.model %> </td>
-                        <td class='content'><%= car.year %> </td>
-                        <td class='content'><%= car.posted %> </td>
-                        <td class='content'><%= car.author %> </td>
-                        <td class='content'><%= car.description %> </td>
-                    </tr>
-                </table>
-            </section>
-        </body>
+                    <table class='key'>
+                        <thread>
+                            <tr>
+                                <th>Make</th>
+                                <th>Model</th>
+                                <th>Year</th>
+                                <th>Date Posted</th>
+                                <th>Author</th>
+                            </tr>
+                        </thread>
+                        <tbody>
+                            
+                        </tbody>
+                    </table>
+                </section>         
+</body>
 </html>

@@ -42,8 +42,8 @@
                         <td><%= c.model %></td>
                         <td><%= c.year %></td>
                         <td><%= c.posted.toLocaleDateString() %></td>
-                        <td><%= c.author %> </td>
-                        <td><a class='allButtons' href="cars/show/<% c._id %>">DETAILS</a></td>
+                        <td><%= c.user %> </td>
+                        <td><a class='allButtons' href="/cars/<%= c.id %>">DETAILS</a></td>
                     </tr>
                     <% }) %> 
             </tbody>
