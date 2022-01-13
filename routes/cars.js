@@ -5,12 +5,9 @@ const carCtrl = require('../controllers/cars');
 const userCtrl = require('../controllers/users');
 
 router.get('/cars', carCtrl.index);
-router.get('/cars/new', carCtrl.new);
+router.get('/cars/new', isLoggedIn, carCtrl.new);
 router.get('/cars/:id', carCtrl.show);
-// router.post('/cars/:id', carCtrl.create);
 router.post('/cars', isLoggedIn, carCtrl.create);
-
-router.get('/users', userCtrl.index);
 
 function isLoggedIn(req, res, next){
     if(req.isAuthenticated()) return next();

@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
 <h2 class='title'>Details</h2>
 <div class='carTable'>
-    <table class = 'content'>
+    <table class='content'>
         <thread>
             <tr>
     <th>Make</th>
@@ -9,14 +9,14 @@
     <th>Year</th>
     <th>Posted</th>
     <th>Description</th>
-    </tr>
+</tr>
 </thread>
 <tbody>
     <tr>
         <td><%= car.make %></td>
         <td><%= car.model %></td>
         <td><%= car.year %></td>
-        <td><%= car.posted.toLocaleDateString() %> </td>
+        <td><%= car.posted.toLocaleDateString() %></td>
         <td><%= car.description %> </td>
     </tr>
 </tbody>
@@ -24,71 +24,55 @@
 </tr>
 </div>
 <br>
-<div class='hdr'>
-  <% if (user && !car.reviews.some(obj => obj.userId.equals(user._id))) { %>
-    <h4>Reviews</h4>
-    <form id="add-review-form" method="POST" action="/cars/<%= car._id %>/reviews">
-      <label>Review</label>
-      <textarea name="content"></textarea>
-      <br>
-      <label>Rating</label>
-      <select class='allTabs' name="rating">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select>
-      <input class='allButtons' type="submit" value="Add Review">
-    </form>
-  <% } %>
-</div>
-<br>
-<div class='carTable'>
-    <% if (car.reviews.length) { %>
-        <table class='hdr'>
-      <thead>
-        <tr>
-          <th>User</th>
-          <th>Date</th>
-          <th>Rating</th>
-          <th>Review</th>
-        </tr>
-      </thead>
-        <% let total = 0 %>
+<div>
+    <dir>
+    <% if (car.reviews){ %>
         <% car.reviews.forEach(function(r) { %>
-            <% total += r.rating %>
-            <tr>
-            <td><%= r.userName %></td>
-            <td><%= r.posted.toLocaleDateString() %></td>
-            <td><%= r.rating %></td>
-            <td><%= r.content %></td>
-            </tr>
-            <% if (r.userId.equals(user._id)) { %>
-                <form
-                action="/cars/<%= car._id %>/reviews/<%= r._id %>?_method=PUT"
-                method="POST">
-                <textarea name="text" required></textarea><br>
-                <input type="submit" value="Edit">
-            </form>
-            <form action="/reviews/<%= r.id %>?_method=DELETE"
-                class="delete-form" method="POST">
-                <button class='allButtons' type="submit">Delete</button>
-            </form>
-            <% } %>
-          </tr>
-        <% }); %>
-    </div>
-        <tr>
-          <td colspan="2"></td>
-          <td><strong><%= (total / car.reviews.length).toFixed(1) %></strong></td>
-        </tr>
-      </tbody>
-    </table>
-</div>
-  <% } else { %>
-    <h5 class='textW'>No Reviews Yet</h5>
-  <% } %>
+            <% if (!user) { %>
+                <tr>
+                    <div>
+                        <td>
+                            <%= r.posted.toLocaleDateString() %>
+                            <%= r.userName %> 
+                            <%= r.text %>
+                        </td>
+            <% } else if (r.userId.equals(user._id)) {%>
+                    <div>
+                        <td>
+                            <%= r.posted.toLocaleDateString() %>
+                            <%= r.userName %>
+                            <%= r.text %> 
+                        </td>
+                        <form id="edit-comment-form"
+                            action="/cars/<%= car._id %>/reviews/<%= r._id %>?_method=PUT"
+                            method="POST">
+                            <textarea name="text" required></textarea><br>
+                            <input type="submit" value="Update Comment">
+                        </form>
+                        <form id="delete-comment-btn"
+                         action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
+                            <button type="submit">Delete</button>
+                        </form>
+            <% } else if (user) {%>
+                <div>
+                    <td>
+                        <%= r.posted.toLocaleDateString() %>
+                        <%= r.text %>
+                    </td>
+                    <% } %>
+                </div>
+                </tr>
+                <br>
+                <% }); %>
+                    <% } else { %>
+                        <h5>No Comments Yet</h5>
+                        <% } %> 
+</dir>
+<form class='content' id="add-comment-form" method="POST" action="/cars/<%= car._id %>/reviews">
+    <label class='textW'>Comment</label>
+    <textarea name="text" required></textarea>
+    <input class='allButtons' type="submit" value="Add Comment">
+</form>
     
 
 <%- include('../partials/footer') %>

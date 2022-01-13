@@ -3,7 +3,7 @@
                 <h1 class='hdr'>Car Reviews</h1>
                 <p class='title-description'>Wanna see a review for a car? Or even make one? Then you've come to the right place</p>
     <div class='carTable'>
-        <table class='key'>
+        <table class='content'>
             <thread>
                 <tr>
                     <th>Make</th>
@@ -20,12 +20,12 @@
                         <td><%= c.model %></td>
                         <td><%= c.year %></td>
                         <td><%= c.posted.toLocaleDateString() %></td>
-                        <td><%= c.author %> </td>
+                        <td><%= c.name %> </td>
                         <td><a class='allButtons' href="/cars/<%= c.id %>">DETAILS</a></td>
                     </tr>
                     <% }) %> 
             </tbody>
         </table>
     </div>
-    
+
     <%- include('../partials/footer') %>

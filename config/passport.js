@@ -12,10 +12,10 @@ passport.use(new GoogleStrategy({
     // a user has logged in via OAuth!
     // refer to the lesson plan from earlier today in order to set this up
     console.log(profile, "<----- Profile");
-    User.findOne({googleId: profile.id}, function(err, userDocument){
+    User.findOne({googleId: profile.id}, function(err, user){
       if(err) return sb(err);
-      if(userDocument){
-        return cb(null, userDocument);
+      if(user){
+        return cb(null, user);
       } else {
         const newUser = new User({
           name: profile.displayName,
@@ -40,8 +40,8 @@ passport.deserializeUser(function(id, done) {
   // Find your User, using your model, and then call done(err, whateverYourUserIsCalled)
   // When you call this done function passport assigns the user document to req.user, which will 
   // be availible in every Single controller function, so you always know the logged in user
-  User.findById(id, function(err, userDocument){
-    done(err, userDocument);
+  User.findById(id, function(err, user){
+    done(err, user);
   })
 });
 

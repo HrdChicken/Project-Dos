@@ -27,7 +27,7 @@ function show(req, res, next){
     Car.findById(req.params.id, function(err, car){
         res.render('cars/show',{
             title: 'Car Details',
-            car: car
+            car
         })
     })
 }
