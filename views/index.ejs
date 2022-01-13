@@ -1,24 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <img class='img' src='/images/durk.jpeg'>
-  <body>
-    <nav> 
-    <a class='allLinks' href='/cars'>Car Reviews</a>
-    <a class='allLinks' href='/cars/new'>Create Car</a>
-            <% if (user) { %>
-                <a class='allLinks' href='/logout'>Log Out</a>
-                <span>Hello <%= user.name %> </span>
-                <% } else { %>
-                    <a class='allLinks' href='/auth/google'>Log In</a>
-                    <% } %>
-    </nav>
+<%- include('partials/header') %>
     <h1 class='title'>Welcome</h1>
-    <p class='title-description'>Log Into Google</p>
-  </body>
-</html>
+    <p class='title-description'>Log In With Google</p>
+<%- include('partials/footer') %>

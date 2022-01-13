@@ -3,11 +3,8 @@ const User = require('../models/user');
 
 module.exports = {
     new: newCar,
-    // update,
-    // edit,
     index,
-    create: createCar,
-    delete: deleteCar,
+    create,
     show
 };
 
@@ -20,27 +17,21 @@ function index(req, res, next){
     })
 }
 
-function createCar(req, res, next){
-    Car.create(req.body, function(err, car){
+function create(req, res, next){
+    Car.create(req.body, function(err, carDocument){
         res.redirect('/cars')
     })
 }
 
-function deleteCar(req, res, next){
-    if(!req.params.carId) return;
-    Car.findOneAndDelete(req.params.carId, function(err, carDoc){
-        res.redirect('/cars')
-    })
-}
-
-function show(req, res){
-    Car.findById(req.params.carId, function(err, carDocument){
+function show(req, res, next){
+    Car.findById(req.params.id, function(err, car){
         res.render('cars/show',{
-            car: carDocument
+            title: 'Car Details',
+            car: car
         })
     })
 }
 
 function newCar(req, res){
-    res.render('cars/new', {title: 'Cars New', make: 'gotti'});
+    res.render('cars/new', {title: 'Cars New'});
 }

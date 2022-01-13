@@ -1,27 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/stylesheets/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-    <title>Home Page</title>
-</head>
-<body>
-    <img class='img' src='/images/durk.jpeg'>
-    <nav>
-        <a class='allLinks' href='/cars/new'>Create Car</a>
-        <a class='allLinks' href='/'>Home</a>
-        <% if (user) { %>
-            <a class='allLinks' href='/logout'>Log Out</a>
-            <span>Hello <%= user.name %> </span>
-            <% } else { %>
-                <a class='allLinks' href='/auth/google'>Log In</a>
-                <% } %>
-                </nav>
+<%- include('../partials/header') %>
+
                 <h1 class='hdr'>Car Reviews</h1>
                 <p class='title-description'>Wanna see a review for a car? Or even make one? Then you've come to the right place</p>
     <div class='carTable'>
@@ -42,12 +20,12 @@
                         <td><%= c.model %></td>
                         <td><%= c.year %></td>
                         <td><%= c.posted.toLocaleDateString() %></td>
-                        <td><%= c.user %> </td>
+                        <td><%= c.author %> </td>
                         <td><a class='allButtons' href="/cars/<%= c.id %>">DETAILS</a></td>
                     </tr>
                     <% }) %> 
             </tbody>
         </table>
     </div>
-</body>
-</html>
+    
+    <%- include('../partials/footer') %>

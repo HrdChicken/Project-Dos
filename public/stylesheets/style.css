@@ -51,6 +51,7 @@ nav{
 
 .key{
   grid-area: key;
+  text-align: center;
   font-size: 30px;
   color: rgb(255, 255, 255);
 }
@@ -69,7 +70,11 @@ nav{
  }
 .allButtons{
   font-family: 'Bebas Neue', cursive;
-  font-size: 30px;
+  font-size: 22px;
+  background-color: black;
+  border: 2px black solid;
+  border-radius: 5px;
+  cursor: pointer;
   color: rgb(255, 255, 255);
 }
 
@@ -77,5 +82,22 @@ nav{
   border: 2px rgb(23, 23, 23) solid;
   border-radius: 5px;
   padding-top: 8px;
-  
+}
+
+.textBox{
+  border: 2px rgb(23, 23, 23) solid;
+  border-radius: 5px;
+  font-size: 22;
+}
+
+.textW{
+  font-size: 30px;
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+
+.allTabs{
+  font-size: 22px;
+  color: black;
+  background-color: white;
 }

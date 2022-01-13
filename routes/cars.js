@@ -1,14 +1,16 @@
 const express = require('express');
 const router = express.Router();
+const passport = require('passport');
 const carCtrl = require('../controllers/cars');
+const userCtrl = require('../controllers/users');
 
-
-router.post('/cars', isLoggedIn, carCtrl.create);
-router.get('/cars/new', carCtrl.new);
 router.get('/cars', carCtrl.index);
+router.get('/cars/new', carCtrl.new);
 router.get('/cars/:id', carCtrl.show);
-router.post('/cars/:id', carCtrl.create);
-router.delete('/cars/:id', carCtrl.delete);
+// router.post('/cars/:id', carCtrl.create);
+router.post('/cars', isLoggedIn, carCtrl.create);
+
+router.get('/users', userCtrl.index);
 
 function isLoggedIn(req, res, next){
     if(req.isAuthenticated()) return next();

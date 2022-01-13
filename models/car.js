@@ -2,23 +2,44 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const reviewSchema = new Schema(
-    {content: {type: String}},
+const reviewSchema = new Schema({
+    userId: {type: Schema.Types.ObjectId, ref: 'User'},
+    userName: String,
+    content: String,
+    rating: {type: Number, min: 1, max:5, default: 5},
+    posted: {type: Date, default: function(){let newDate = new Date(); let nextYear = newDate.setFullYear(newDate.getFullYear() + 0)
+        return nextYear}},
+},
     {timestamps: true}
 )
 
 const carSchema = new Schema({
     make: {type: String, required: true},
     model: {type: String, required: true},
-    year:{type: Number, required: true},
-    posted: {type: Date, default: function(){let newDate = new Date(); let nextYear = newDate.setFullYear(newDate.getFullYear() + 1)
-    return nextYear},
-    author: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
-    description:{type: String}
-    },
-reviews: [reviewSchema],
+    year: {type: Number, required: true},
+    posted: {type: Date, default: function(){let newDate = new Date(); let nextYear = newDate.setFullYear(newDate.getFullYear() + 0)
+            return nextYear}},
+    author: {type: String, required: true},
+    description: {type: String, required: true},
+    reviews: [reviewSchema]
 },
-{timestamps: {startedAt: 'startedAt', updatedAt: 'updatedAt'}},
-);
+
+{timestamps: true}
+)
+
+
+// const carSchema = new Schema({
+//     make: {type: String, required: true},
+//     model: {type: String, required: true},
+//     year:{type: Number, required: true},
+//     posted: {type: Date, default: function(){let newDate = new Date(); let nextYear = newDate.setFullYear(newDate.getFullYear() + 1)
+//     return nextYear},
+//     author: {},
+//     description:{type: String}
+//     },
+// reviews: [reviewSchema],
+// },
+// {timestamps: {startedAt: 'startedAt', updatedAt: 'updatedAt'}},
+// );
 
 module.exports = mongoose.model('Car', carSchema);

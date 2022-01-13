@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+<body>
+    <img class='img' src='/images/durks.png'>
+        <nav>
+            <a class='allLinks' href="/cars" <%- title === 'Cars' ? 'class="active"' : '' %>> Cars </a>
+            <a class='allLinks' href='/' <%- title === 'Home' ? 'class="active"' : '' %>> Home </a>
+           <% if(user) { %>
+            <a class='allLinks' href="/cars/new" <%- title === 'Create' ? 'class="active"' : '' %>> Create </a>
+           <% } %>
+            <% if (user) { %>
+            <a class='allLinks' href="/logout">Log Out</a>
+            <span class='allLinks'><%= user.name %> </span>
+            <% } else { %>
+            <a class ='allLinks' href="/auth/google"> Log In</a>
+            <% } %>       
+        </nav>
+  <main>
