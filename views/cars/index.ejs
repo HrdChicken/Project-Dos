@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
 
-                <h1 class='hdr'>Car Reviews</h1>
-                <p class='title-description'>Wanna see a review for a car? Or even make one? Then you've come to the right place</p>
+                <h1 class='title'>Car Reviews</h1>
+                <p class='title-description'>______________________________</p>
     <div class='carTable'>
         <table class='content'>
             <thread>
@@ -15,7 +15,7 @@
             </thread>
             <tbody>
                 <% cars.forEach(function(c){ %>
-                    <tr class='content'>
+                    <tr class='key'>
                         <td class='make'><%= c.make %></td>
                         <td class='model'><%= c.model %></td>
                         <td class='year'><%= c.year %></td>

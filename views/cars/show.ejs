@@ -1,5 +1,5 @@
 <%- include('../partials/header') %>
-<h2 class='title'>Details</h2>
+<h1 class='title'>Details</h1>
 <div class='carTable'>
     <table class='content'>
         <thread>
@@ -13,11 +13,11 @@
 </thread>
 <tbody>
     <tr>
-        <td><%= car.make %></td>
-        <td><%= car.model %></td>
-        <td><%= car.year %></td>
-        <td><%= car.posted.toLocaleDateString() %></td>
-        <td><%= car.description %> </td>
+        <td class='make'><%= car.make %></td>
+        <td class='model'><%= car.model %></td>
+        <td class='year'><%= car.year %></td>
+        <td class='posted'><%= car.posted.toLocaleDateString() %></td>
+        <td class='author'><%= car.description %> </td>
     </tr>
 </tbody>
 </table>
@@ -46,9 +46,7 @@
                             <br>
                             <%= r.text %>
                         </td>
-                        <form id="edit-comment-form"
-                            action="/cars/<%= car._id %>/reviews/<%= r._id %>?_method=PUT"
-                            method="POST">
+                        <form action="/cars/<%= car._id %>/reviews/<%= r._id %>?_method=PUT" method="POST">
                             <textarea name="text" required></textarea><br>
                             <input type="submit" value="Update Comment">
                         </form>
@@ -74,10 +72,9 @@
                         <% } %> 
 </dir>
 <% if (user) { %>
-<form class='content' id="add-comment-form" method="POST" action="/cars/<%= car._id %>/reviews">
-    <label class='textW'>Comment</label>
+<form class='hdrp' id="add-comment-form" method="POST" action="/cars/<%= car._id %>/reviews">
     <textarea name="text" required></textarea>
-    <input class='allButtons' type="submit" value="Add Comment">
+    <input class='addcomment' type="submit" value="Add Comment">
 </form>
 <% } else { %>
     <h1 class='title'>Log in to make a comment</h1>

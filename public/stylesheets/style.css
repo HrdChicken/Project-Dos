@@ -1,37 +1,41 @@
+*{
+  font-family: 'Bebas Neue', cursive;
+}
 body{
   font-family: 'Bebas Neue', cursive;
-  background-color: rgb(0, 0, 0);
+  background-image: url(../images/carss.jpeg);
+  background-size: 130%;
+  background-blend-mode:darken;
 }
 
 nav{
   display: flex;
   justify-content: flex-end;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
 }
 
-.img{
-  padding: 2px;
-  margin: 2px;
+img{
+  width: 80px;
 }
 
 .title{
   font-family: 'Bebas Neue', cursive;
   font-size: 35px;
   text-align: center;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
 }
 
 .title-description{
   font-family: 'Bebas Neue', cursive;
   font-size: 20px;
   text-align: center;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
 }
 
 
 .carTable{
   text-align: center;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   display: grid;
   grid-template-areas:
     "hdr hdr hdr hdr"
@@ -39,73 +43,118 @@ nav{
     "content content content content";
   grid-template-rows: 1fr 1fr 100%;
   grid-template-columns: 2fr 1fr 1fr 6fr;
-  background-color: rgb(92, 92, 92);
-}
-
-.newPage{
-  display: grid;
-  grid-template-columns: 100px 100px 100px 100px;
-  grid-template-rows: none;
 }
 
 .hdr{
   grid-area: hdr;
   text-align: center;
   font-size: 30px;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+}
+
+.hdrp{
+  text-align: left;
+  padding-left: 40px;
+  display: inline-block;
+  font-size: 30px;
+  color: rgb(0, 0, 0);
 }
 
 .key{
   grid-area: key;
   text-align: center;
   font-size: 30px;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
 }
 
 .content{
   grid-area: content;
   text-align: center;
   font-size: 30px;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.349);
+}
+
+a:hover{
+  color:rgb(255, 255, 255)
 }
 
 .allLinks{
   font-size: 25px;
   padding: 2px;
   margin: 2px;
-  color: rgb(131, 0, 0);
-  border: solid 2px rgb(0, 0, 0);
-  border-radius: 5px;
-  background-color: rgb(66, 66, 66);
+  color: rgb(0, 0, 0);
  }
 
  .userName{
   font-size: 25px;
   padding: 2px;
   margin: 2px;
-  color: rgb(21, 75, 16);
+  color: rgb(251, 255, 0);
 
  }
 
 .allButtons{
   font-family: 'Bebas Neue', cursive;
-  font-size: 22px;
-  background-color: black;
-  border: 2px black solid;
-  border-radius: 5px;
+  font-size: 25px;
   cursor: pointer;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+}
+
+.addcomment{
+  font-family: 'Bebas Neue', cursive;
+  font-size: 22px;
+  cursor: pointer;
+  color: rgb(0, 0, 0);
+}
+
+label{
+  width: 100px;
+  height: 10px;
+  display: inline-block;
+}
+
+textarea{
+  width: 500px;
+  height: 15px;
+  padding-top: 5px;
+  display: inline-block;
+  border: 2px rgb(23, 23, 23) solid;
+  border-radius: 5px;
+  font-family: 'Bebas Neue', cursive;
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+  font-size: 22px;
+
+}
+
+.otherarea{
+  width: 500px;
+  height: 15px;
+  padding-top: 5px;
+  display: inline-block;
+  border: 2px rgb(23, 23, 23) solid;
+  border-radius: 5px;
+  font-family: 'Bebas Neue', cursive;
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+  font-size: 22px; 
 }
 
 .inputBox{
   border: 2px rgb(23, 23, 23) solid;
   border-radius: 5px;
   font-family: 'Bebas Neue', cursive;
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+  font-size: 22px;
+  height:20px;
+  width: 100px;
 }
 
 .textW{
   font-size: 30px;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   text-align: center;
 }
 
@@ -116,31 +165,34 @@ nav{
 }
 
 .show-comments{
-  color:white;
-  font-size: 20px;
+  color:rgb(255, 255, 255);
+  font-size: 22px;
+  display: inline-block;
+  height: 80px;
+  background-color: rgba(0, 0, 0, 0.376);
 }
 
 .white-text{
-  color: white;
-  font-size: 22px;
+  color: rgb(0, 0, 0);
+  font-size: 25px;
 }
 
 .make{
-  color: green;
+  color: rgb(255, 255, 255);
 }
 
 .model{
-  color: green;
+  color: rgb(255, 255, 255);
 }
 
 .year{
-  color: green;
+  color: rgb(255, 255, 255);
 }
 
 .posted{
-  color: green;
+  color: rgb(255, 255, 255);
 }
 
 .author{
-  color: green;
+  color: rgb(255, 255, 255);
 }
