@@ -3,15 +3,16 @@
 }
 body{
   font-family: 'Bebas Neue', cursive;
-  background-image: url(../images/carss.jpeg);
+  background-color:black
+  /* background-image: url(../images/carss.jpeg);
   background-size: 130%;
-  background-blend-mode:darken;
+  background-blend-mode:darken; */
 }
 
 nav{
   display: flex;
   justify-content: flex-end;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
 }
 
 img{
@@ -20,16 +21,16 @@ img{
 
 .title{
   font-family: 'Bebas Neue', cursive;
-  font-size: 35px;
+  font-size: 50px;
   text-align: center;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
 }
 
 .title-description{
   font-family: 'Bebas Neue', cursive;
   font-size: 20px;
   text-align: center;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
 }
 
 
@@ -49,7 +50,7 @@ img{
   grid-area: hdr;
   text-align: center;
   font-size: 30px;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
 }
 
 .hdrp{
@@ -71,8 +72,8 @@ img{
   grid-area: content;
   text-align: center;
   font-size: 30px;
-  color: rgb(0, 0, 0);
-  background-color: rgba(0, 0, 0, 0.349);
+  color: rgb(255, 255, 255);
+  background-color: rgba(51, 51, 51, 0.452);
 }
 
 a:hover{
@@ -83,7 +84,7 @@ a:hover{
   font-size: 25px;
   padding: 2px;
   margin: 2px;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
  }
 
  .userName{
@@ -98,7 +99,7 @@ a:hover{
   font-family: 'Bebas Neue', cursive;
   font-size: 25px;
   cursor: pointer;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
 }
 
 .addcomment{
@@ -178,21 +179,24 @@ textarea{
 }
 
 .make{
-  color: rgb(255, 255, 255);
+  color: rgb(251, 255, 0);
 }
 
 .model{
-  color: rgb(255, 255, 255);
-}
+  color: rgb(251, 255, 0);}
 
 .year{
-  color: rgb(255, 255, 255);
-}
+  color: rgb(251, 255, 0);}
 
 .posted{
-  color: rgb(255, 255, 255);
-}
+  color: rgb(251, 255, 0);}
 
 .author{
-  color: rgb(255, 255, 255);
+  color: rgb(251, 255, 0);}
+
+.submitButton{
+  font-family: 'Bebas Neue', cursive;
+  font-size: 25px;
+  cursor: pointer;
+  color: rgb(0, 0, 0);
 }
