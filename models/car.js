@@ -26,19 +26,4 @@ const carSchema = new Schema({
 {timestamps: true}
 )
 
-
-// const carSchema = new Schema({
-//     make: {type: String, required: true},
-//     model: {type: String, required: true},
-//     year:{type: Number, required: true},
-//     posted: {type: Date, default: function(){let newDate = new Date(); let nextYear = newDate.setFullYear(newDate.getFullYear() + 1)
-//     return nextYear},
-//     author: {},
-//     description:{type: String}
-//     },
-// reviews: [reviewSchema],
-// },
-// {timestamps: {startedAt: 'startedAt', updatedAt: 'updatedAt'}},
-// );
-
 module.exports = mongoose.model('Car', carSchema);
