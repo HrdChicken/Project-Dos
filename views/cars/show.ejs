@@ -26,22 +26,25 @@
 <br>
 <div>
     <dir>
+        <h3 class='white-text'>Comments</h3>
     <% if (car.reviews){ %>
         <% car.reviews.forEach(function(r) { %>
             <% if (!user) { %>
                 <tr>
-                    <div>
+                    <div class='show-comments'>
                         <td>
-                            <%= r.posted.toLocaleDateString() %>
                             <%= r.userName %> 
+                            <%= r.posted.toLocaleDateString()%>
+                            <br>
                             <%= r.text %>
                         </td>
             <% } else if (r.userId.equals(user._id)) {%>
-                    <div>
+                    <div class='show-comments'>
                         <td>
-                            <%= r.posted.toLocaleDateString() %>
                             <%= r.userName %>
-                            <%= r.text %> 
+                            <%= r.posted.toLocaleDateString() %>
+                            <br>
+                            <%= r.text %>
                         </td>
                         <form id="edit-comment-form"
                             action="/cars/<%= car._id %>/reviews/<%= r._id %>?_method=PUT"
@@ -54,9 +57,11 @@
                             <button type="submit">Delete</button>
                         </form>
             <% } else if (user) {%>
-                <div>
+                <div class='show-comments'>
                     <td>
+                        <%= r.userName %> 
                         <%= r.posted.toLocaleDateString() %>
+                        <br>
                         <%= r.text %>
                     </td>
                     <% } %>
@@ -68,11 +73,14 @@
                         <h5>No Comments Yet</h5>
                         <% } %> 
 </dir>
+<% if (user) { %>
 <form class='content' id="add-comment-form" method="POST" action="/cars/<%= car._id %>/reviews">
     <label class='textW'>Comment</label>
     <textarea name="text" required></textarea>
     <input class='allButtons' type="submit" value="Add Comment">
 </form>
-    
+<% } else { %>
+    <h1 class='title'>Log in to make a comment</h1>
+    <% } %>
 
 <%- include('../partials/footer') %>

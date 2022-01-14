@@ -16,11 +16,11 @@
             <tbody>
                 <% cars.forEach(function(c){ %>
                     <tr class='content'>
-                        <td><%= c.make %></td>
-                        <td><%= c.model %></td>
-                        <td><%= c.year %></td>
-                        <td><%= c.posted.toLocaleDateString() %></td>
-                        <td><%= c.name %> </td>
+                        <td class='make'><%= c.make %></td>
+                        <td class='model'><%= c.model %></td>
+                        <td class='year'><%= c.year %></td>
+                        <td class='posted'><%= c.posted.toLocaleDateString() %></td>
+                        <td class='author'><%= c.author %> </td>
                         <td><a class='allButtons' href="/cars/<%= c.id %>">DETAILS</a></td>
                     </tr>
                     <% }) %> 

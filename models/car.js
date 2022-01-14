@@ -18,6 +18,7 @@ const carSchema = new Schema({
     year: {type: Number, required: true},
     posted: {type: Date, default: function(){let newDate = new Date(); let nextYear = newDate.setFullYear(newDate.getFullYear() + 0)
             return nextYear}},
+    author: {type: String, required: true},
     description: {type: String, required: true},
     reviews: [reviewSchema]
 },

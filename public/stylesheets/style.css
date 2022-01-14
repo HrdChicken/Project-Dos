@@ -1,12 +1,12 @@
 body{
   font-family: 'Bebas Neue', cursive;
-  background-color: rgb(33, 33, 33);
+  background-color: rgb(0, 0, 0);
 }
 
 nav{
   display: flex;
   justify-content: flex-end;
-  color: white;
+  color: rgb(255, 255, 255);
 }
 
 .img{
@@ -42,6 +42,12 @@ nav{
   background-color: rgb(92, 92, 92);
 }
 
+.newPage{
+  display: grid;
+  grid-template-columns: 100px 100px 100px 100px;
+  grid-template-rows: none;
+}
+
 .hdr{
   grid-area: hdr;
   text-align: center;
@@ -67,7 +73,20 @@ nav{
   font-size: 25px;
   padding: 2px;
   margin: 2px;
+  color: rgb(131, 0, 0);
+  border: solid 2px rgb(0, 0, 0);
+  border-radius: 5px;
+  background-color: rgb(66, 66, 66);
  }
+
+ .userName{
+  font-size: 25px;
+  padding: 2px;
+  margin: 2px;
+  color: rgb(21, 75, 16);
+
+ }
+
 .allButtons{
   font-family: 'Bebas Neue', cursive;
   font-size: 22px;
@@ -81,13 +100,7 @@ nav{
 .inputBox{
   border: 2px rgb(23, 23, 23) solid;
   border-radius: 5px;
-  padding-top: 8px;
-}
-
-.textBox{
-  border: 2px rgb(23, 23, 23) solid;
-  border-radius: 5px;
-  font-size: 22;
+  font-family: 'Bebas Neue', cursive;
 }
 
 .textW{
@@ -100,4 +113,34 @@ nav{
   font-size: 22px;
   color: black;
   background-color: white;
+}
+
+.show-comments{
+  color:white;
+  font-size: 20px;
+}
+
+.white-text{
+  color: white;
+  font-size: 22px;
+}
+
+.make{
+  color: green;
+}
+
+.model{
+  color: green;
+}
+
+.year{
+  color: green;
+}
+
+.posted{
+  color: green;
+}
+
+.author{
+  color: green;
 }

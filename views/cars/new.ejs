@@ -5,15 +5,17 @@
                 <form class='content' action='/cars' method='POST'>
                 <h1 class='title'>Enter New Car</h1>
                 <p class='title-description'>Make sure to fill out all the fields.</p>
-                <div class='newpage'>
-                        <label class='content'>Make</label>
-                        <input class='inputBox' type='text' name='make'>
-                        <label class='content'>Model</label>
-                        <input class='inputBox' type='text' name='model'>
-                        <label class='content'>Year</label>
-                        <input class='inputBox' type='text' name='year'>
-                        <label class='content'>Description</label>
-                        <textarea class='textBox' type='text' name='description'></textarea>
+                <div class='newPage'>
+                        <label class='make'>Make</label>
+                        <input required class='inputBox' type='text' name='make'>
+                        <label class='model'>Model</label>
+                        <input required class='inputBox' type='text' name='model'>
+                        <label class='year'>Year</label>
+                        <input required class='inputBox' type='number' name='year'>
+                        <label class='posted'>By</label>
+                        <input required class='inputBox' type='text' name='author'>
+                        <label class='author'>Description</label>
+                        <textarea required class='inputBox' type='text' name='description'></textarea>
                         <input class='allButtons' type='submit' value='Submit'/>
                 </form>
                 <% } else { %>
